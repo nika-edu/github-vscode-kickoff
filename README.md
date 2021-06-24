@@ -16,11 +16,15 @@ Detta kommer att bli ganska många steg, men det kommer enbart att behöva göra
 
 3. Efter att du installerat Git på datorn behöver flera konfigurationer göras, för dessa behöver du öppna terminalfönstret `Git Bash` (finns på Start-menyn efter att Git installerats). Öppna `Git Bash`
 ![](git_start_menu.png)
+
+
 och skriv:
 
 ```
 git config --global user.email "email@example.com"
 ```
+![](git_config_mail.png)
+
 Detta ställer in e-postadressen i Git, och behövs för att kunna synkronisera filer till GitHub. Naturligtvis ska du ange din egen e-postadress.
 
 Därefter skriver du i terminalfönstret:
