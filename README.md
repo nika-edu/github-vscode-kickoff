@@ -16,23 +16,23 @@ Detta kommer att bli ganska många steg, men det kommer enbart att behöva göra
 
 Följande steg kommer att beskrivas nedan:
 
-* [Skapa ett konto på GitHub](#__1.-skapa-ett-konto-pa-GitHub__)
-* Installera programmet Git på din dator
-* Konfigurera Git på datorn
-* [Skapa ett SSH-nyckelpar](#__4.-skapa-ett-SSH-nyckelpar__)
-* Ge datorn tillåtelse att upprätta förbindelse med GitHub
-* Kopiera den publika delen av nyckelparet
-* Installera den publika delen av nyckelparet på GitHub
+1. [Skapa ett konto på GitHub](#1-skapa-ett-konto-på-github)
+2. [Installera programmet Git på din dator](#2-installera-programmet-git-på-din-dator)
+3. [Konfigurera Git på datorn](#3-konfigurera-git-på-datorn)
+4. [Skapa ett SSH-nyckelpar](#4-skapa-ett-ssh-nyckelpar)
+5. [Ge datorn tillåtelse att upprätta förbindelse med GitHub](#5-ge-datorn-tillåtelse-att-upprätta-förbindelse-med-github)
+6. [Kopiera den publika delen av nyckelparet](#6-kopiera-den-publika-delen-av-nyckelparet)
+7. [Installera den publika delen av nyckelparet på GitHub](#7-installera-den-publika-delen-av-nyckelparet-på-github)
 
 ***
 
-### __1. Skapa ett konto pa GitHub__
-Skapa ett GitHub-konto på [github.com](https://github.com). Tryck på knappen **Sign up** uppei högra hörnet. Använd den e-postadress du fått från skolan. När du väljer användarnamn och lösenord kan du låta Chrome spara dessa.
+### __1. Skapa ett konto på GitHub__
+Skapa ett GitHub-konto på <a href="https://github.com" target="_blank">github.com</a>. Tryck på knappen **Sign up** uppe i högra hörnet. Använd den e-postadress du fått från skolan. När du väljer användarnamn och lösenord kan du låta Chrome spara dessa.
 
 ***
 
 ### __2. Installera programmet Git på din dator__
-När du nu har ett GitHub-konto ska du ladda ned programmet Git till din dator. [Detta program hittar du här](https://git-scm.com/download/). Installera detta på datorn.
+När du nu har ett GitHub-konto ska du ladda ned programmet Git till din dator. <a href="https://git-scm.com/download/" target="_blank">Detta program hittar du här</a>. Installera detta på datorn.
 
 ***
 
