@@ -1,12 +1,15 @@
-# Kom igång med i Github i VS Code
-## Vad är GitHub?
+# Kom igång med i GitHub i VS Code
+Huvudavsnitt nedan:
+* [Skapa ett GitHub-konto med SSH-autensiering](#skapa-ett-github-konto-med-ssh-autensiering)
+* [Använda VS Code med GitHub](#använda-vs-code-med-github) (Ännu ej klart)
+### Vad är GitHub?
 GitHub är en s.k versionshanteringstjänst som många programmerare använder. Versionshantering innebär att tidigare versioner av källkod (eller andra dokument) sparas. All programutveckling sker stegvis; du kanske börjar med att skapa grundfunktionaliteten i programmet för att sedan bygga på med andra saker. I Github kan hela den processen sparas. Det gör att det går att gå tillbaka till en tidigare version om det skulle behövas. Du har dessutom alltid en backup på koden om din dator skulle gå sönder. Det är enkelt att dela kod med andra, och det går att samarbeta flera programmerare i ett och samma projekt (fast från olika datorer). Många projekt i GitHub är öppen källkod (Open Source), vars syfte är att skapa program som det är tillåtet för vem som helst att bygga vidare på. 
 
 Syftet med den här guiden är att du ska skapa en miljö där du enkelt kan ladda upp och ladda ned kod till och från GitHub.
 
 ***
 
-## Vad är VS Code?
+### Vad är VS Code?
 VS Code, eller egentligen Visual Studio Code, är en editor. Det kan liknas vid t ex Microsoft Word eller Google Docs, men det är enbart text och inga formateringar på texten som kan göras (den här texten är skriven i VS Code i ett språk som heter Markdown). En editor används för att skriva källkod (t ex Python, JavaScript eller HTML). Det är Microsoft som ligger bakom VS Code; faktum är att även detta är ett öppen källkod-projekt som ligger på GitHub.
 
 ***
@@ -28,6 +31,8 @@ Följande steg kommer att beskrivas nedan:
 
 ### __1. Skapa ett konto på GitHub__
 Skapa ett GitHub-konto på <a href="https://github.com" target="_blank">github.com</a>. Tryck på knappen **Sign up** uppe i högra hörnet. Använd den e-postadress du fått från skolan. När du väljer användarnamn och lösenord kan du låta Chrome spara dessa.
+
+Logga in på din mail efter att du skapat kontot, det kan finnas en bekräftelselänk du måste trycka på för att ditt ditt GitHub-konto ska aktiveras.
 
 ***
 
