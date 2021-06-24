@@ -37,7 +37,7 @@ git config --global user.name "Ditt Namn"
 
 Namn och e-postadress kommer inte att synas någonstans utanför datorn, så ovanstående punkter görs enbart för att det ska gå att synkronisera dina filer.
 
-Du kan kontrollera att informationen sparats genom att skriva
+Du kan kontrollera att informationen sparats genom att i terminalfönstret skriva:
 
 ```
 git config --list
@@ -48,14 +48,36 @@ git config --list
 I terminalfönstret skriver du nu
 
 ```
-ssh-keygen -t rsa
+ssh-keygen
 ```
 
-**I nuläget ska du inte sätta ett lösenord** (här kan detta dokument komma att uppdateras). Så länge inte den privata nyckeln (se nedan) lämnar din dator är det ingen risk att någon obehörig kan synkronisera filer på ditt GitHub-konto.
+![](ssh_step_01.png)
+**Tryck \<Enter>**
 
-Det som händer här är att två filer skapades i en mapp som heter .ssh (observera den inledande punkten): `id_rsa` och `id_rsa.pub`. Dessa båda filer är nyckelparet; `id_rsa` är den privata delen i paret och ska inte lämna din dator. `id_rsa.pub` är den publika delen och den ska laddas upp till GitHub (beskrivs i punkt 6 nedan).
+![](ssh_step_02.png)
 
-Du kan kontrollera att filerna skapades med kommandot `ls .ssh` i terminalen.
+**Tryck \<Enter>** (Du ska alltså inte sätta ett lösenord; detta för att det blir mer lätthanterligt med VS Code).
+
+![](ssh_step_03.png)
+
+Här ska du bara trycka **\<Enter>** igen.
+
+![](ssh_step_04.png)
+
+Nu är nyckelparet skapat och terminalen visar lite information om det.
+
+![](ssh_step_05.png)
+
+Du kan kontrollera att filerna skapades med kommandot `ls .ssh` i terminalen (observera den inledande punkten).
+
+Filen är nyckelparet; `id_rsa` är den privata delen i paret och ska inte lämna din dator. `id_rsa.pub` är den publika delen och dess innehåll ska kopieras till GitHub (beskrivs i punkt 6 nedan).
+
+Du ska titta på den publika delen av nyckelparet:
+
+![](ssh_step_06.png)
+
+I och med det är själva skapandet av nyckelparet klart (men vi har en bit kvar att gå, så stäng inte terminalfönstret ännu!).
+
 
 5. Vi måste ge ssh tillåtelse att ansluta till GitHub. Det görs med kommandot
 
@@ -63,22 +85,13 @@ Du kan kontrollera att filerna skapades med kommandot `ls .ssh` i terminalen.
 ssh-keyscan.exe -t rsa github.com >> .ssh/known_hosts
 ```
 
-6. Nu ska den publika delen av nyckeln kopieras till GitHub. I terminalen skriver du
+![](ssh_step_07.png)
 
-```
-cat .ssh/id_rsa.pub
-```
+6. Nu ska den publika delen av nyckeln kopieras till GitHub. Du har tidigare tittat på innehållet i nyckelparets publika del (om du inte har det kvar i terminalfönstret skriver du `cat .ssh/id_rsa.pub`). Markera det innehållet och kopiera (högerklicka efter du markerat för att få upp menyn med möjlighet att kopiera):
 
-Det som visas i terminalfönstret nu är den publika nyckeln. Kopiera hela denna (Nyckeln inleds med):
+![](ssh_step_09.png)
 
-`---- BEGIN SSH2 PUBLIC KEY ----`
 
-(och avslutas med): 
 
-`---- END SSH2 PUBLIC KEY ----`
+7. \<Vidare uppdatering sker om hur VS Code hanteras.>
 
-genom att markera texten, högerklicka och tryck på `Copy`.
-
-<Här ska dokumentet uppdateras med bilder på hur man går tillväga i GitHub>
-
-7. <Vidare uppdatering sker om hur VS Code hanteras.>
