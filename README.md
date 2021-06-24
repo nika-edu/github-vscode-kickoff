@@ -4,17 +4,40 @@ GitHub är en s.k versionshanteringstjänst som många programmerare använder. 
 
 Syftet med den här guiden är att du ska skapa en miljö där du enkelt kan ladda upp och ladda ned kod till och från GitHub.
 
-## Vad är VS Code?
-VS Code, eller egentligen Visual Studio Code, är en editor. Det kan liknas vid t ex Microsoft Word eller Google Docs, men det är enbart text och inga formateringar på texten som kan göras. En editor används för att skriva källkod (t ex Python, JavaScript eller HTML). Det är Microsoft som ligger bakom VS Code; faktum är att även detta är ett öppen källkod-projekt som ligger på GitHub.
+***
 
-## Konfigurera VS Code med GitHub-integration i Windows
+## Vad är VS Code?
+VS Code, eller egentligen Visual Studio Code, är en editor. Det kan liknas vid t ex Microsoft Word eller Google Docs, men det är enbart text och inga formateringar på texten som kan göras (den här texten är skriven i VS Code i ett språk som heter Markdown). En editor används för att skriva källkod (t ex Python, JavaScript eller HTML). Det är Microsoft som ligger bakom VS Code; faktum är att även detta är ett öppen källkod-projekt som ligger på GitHub.
+
+***
+
+## Skapa ett GitHub-konto med SSH-autensiering
 Detta kommer att bli ganska många steg, men det kommer enbart att behöva göras vid ett tillfälle. Det är välinvesterad tid, dels därför att du kan använda miljön i dina skolarbeten och dels för att du kommer att lära dig massa saker som du sannolikt kommer att ha nytta av i framtiden.
 
-1. Skapa ett GitHub-konto på [github.com](https://github.com). Tryck på knappen **Sign up** uppei högra hörnet. Använd den e-postadress du fått från skolan. När du väljer användarnamn och lösenord kan du låta Chrome spara dessa.
+Följande steg kommer att beskrivas nedan:
 
-2. När du nu har ett GitHub-konto ska du ladda ned programmet Git till din dator. [Detta program hittar du här](https://git-scm.com/download/). Installera detta på datorn.
+* [Skapa ett konto på GitHub](#__1.-skapa-ett-konto-pa-GitHub__)
+* Installera programmet Git på din dator
+* Konfigurera Git på datorn
+* [Skapa ett SSH-nyckelpar](#__4.-skapa-ett-SSH-nyckelpar__)
+* Ge datorn tillåtelse att upprätta förbindelse med GitHub
+* Kopiera den publika delen av nyckelparet
+* Installera den publika delen av nyckelparet på GitHub
 
-3. Efter att du installerat Git på datorn behöver flera konfigurationer göras, för dessa behöver du öppna terminalfönstret `Git Bash` (finns på Start-menyn efter att Git installerats). Öppna `Git Bash`
+***
+
+### __1. Skapa ett konto pa GitHub__
+Skapa ett GitHub-konto på [github.com](https://github.com). Tryck på knappen **Sign up** uppei högra hörnet. Använd den e-postadress du fått från skolan. När du väljer användarnamn och lösenord kan du låta Chrome spara dessa.
+
+***
+
+### __2. Installera programmet Git på din dator__
+När du nu har ett GitHub-konto ska du ladda ned programmet Git till din dator. [Detta program hittar du här](https://git-scm.com/download/). Installera detta på datorn.
+
+***
+
+### __3. Konfigurera Git på datorn__
+Efter att du installerat Git på datorn behöver flera konfigurationer göras, för dessa behöver du öppna terminalfönstret `Git Bash` (finns på Start-menyn efter att Git installerats). Öppna `Git Bash`
 ![](git_start_menu.png)
 
 
@@ -43,7 +66,10 @@ Du kan kontrollera att informationen sparats genom att i terminalfönstret skriv
 git config --list
 ```
 
-4. Vi går vidare i konfigurationen genom att skapa ett ssh-nyckelpar. `ssh` står för *Secure SHell*, och används ofta för att logga in på datorer på nätverk. `ssh` används även för att autensiera din behörighet att synkronisera filer på ditt eget GitHub-konto.
+***
+
+### __4. Skapa ett SSH-nyckelpar__
+Vi går vidare i konfigurationen genom att skapa ett ssh-nyckelpar. `ssh` står för *Secure SHell*, och används ofta för att logga in på datorer på nätverk. `ssh` används även för att autensiera din behörighet att synkronisera filer på ditt eget GitHub-konto.
 
 I terminalfönstret skriver du nu
 
@@ -78,8 +104,11 @@ Du ska titta på den publika delen av nyckelparet:
 
 I och med det är själva skapandet av nyckelparet klart (men vi har en bit kvar att gå, så stäng inte terminalfönstret ännu!).
 
+***
 
-5. Vi måste ge ssh tillåtelse att ansluta till GitHub. Det görs med kommandot
+
+### __5. Ge datorn tillåtelse att upprätta förbindelse med GitHub__
+Vi måste ge ssh tillåtelse att ansluta till GitHub. Det görs med kommandot
 
 ```
 ssh-keyscan.exe -t rsa github.com >> .ssh/known_hosts
@@ -87,13 +116,19 @@ ssh-keyscan.exe -t rsa github.com >> .ssh/known_hosts
 
 ![](ssh_step_07.png)
 
-6. Nu ska den publika delen av nyckeln kopieras till GitHub. Du har tidigare tittat på innehållet i nyckelparets publika del (om du inte har det kvar i terminalfönstret skriver du `cat .ssh/id_rsa.pub`). Markera det innehållet och kopiera (högerklicka efter du markerat för att få upp menyn med möjlighet att kopiera):
+***
+
+### __6. Kopiera den publika delen av nyckelparet__
+Nu ska den publika delen av nyckeln kopieras till GitHub. Du har tidigare tittat på innehållet i nyckelparets publika del (om du inte har det kvar i terminalfönstret skriver du `cat .ssh/id_rsa.pub`). Markera det innehållet och kopiera (högerklicka efter du markerat för att få upp menyn med möjlighet att kopiera):
 
 ![](ssh_step_09.png)
 
+**Tillägg**: Exponera inte din publika nyckel i onödan (och aldrig någonsin din privata nyckel). Själv skapade jag ett nytt nyckelpar efter att jag tagit alla skärmbilder som behövdes.
 
+***
 
-7. Öppna inställningssidan på ditt konto i GitHub:
+### __7. Installera den publika delen av nyckelparet på GitHub__
+Öppna inställningssidan på ditt konto i GitHub:
 
 ![](github_add_key_01.png)
 
@@ -110,3 +145,7 @@ Efter att detta är gjort, och du tryckt på `Add SSH key` under fältet så bö
 ![](github_add_key_04.png)
 
 I och med det så är också SSH-konfigurationen av ditt GitHub-konto klar.
+
+***
+
+## Använda VS Code med GitHub
