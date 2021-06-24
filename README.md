@@ -93,5 +93,20 @@ ssh-keyscan.exe -t rsa github.com >> .ssh/known_hosts
 
 
 
-7. \<Vidare uppdatering sker om hur VS Code hanteras.>
+7. Öppna inställningssidan på ditt konto i GitHub:
 
+![](github_add_key_01.png)
+
+Därefter väljs avdelningen `SSH and GPG keys`, varpå man trycker på knappen `New SSH key`:
+
+![](github_add_key_02.png)
+
+Den publika nyckeln har du kopierat sedan tidigare (punkt 6 ovan), så det bör bara vara att klistra in den. Ge också nyckeln ett namn; själv valde jag det fantasifulla namnet `Default` för min nyckel som jag klistrade in i GitHub.
+
+![](github_add_key_03.png)
+
+Efter att detta är gjort, och du tryckt på `Add SSH key` under fältet så bör det se ut något liknande som nedan:
+
+![](github_add_key_04.png)
+
+I och med det så är också SSH-konfigurationen av ditt GitHub-konto klar.
