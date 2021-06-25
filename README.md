@@ -154,3 +154,4 @@ I och med det så är också SSH-konfigurationen av ditt GitHub-konto klar.
 ***
 
 ## Använda VS Code med GitHub
+Börja med att [ladda ned](https://code.visualstudio.com/download) och installera VS Code. 
