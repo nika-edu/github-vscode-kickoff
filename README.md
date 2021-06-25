@@ -154,4 +154,18 @@ I och med det så är också SSH-konfigurationen av ditt GitHub-konto klar.
 ***
 
 ## Använda VS Code med GitHub
-Börja med att [ladda ned](https://code.visualstudio.com/download) och installera VS Code. 
+Börja med att [ladda ned](https://code.visualstudio.com/download) och installera VS Code.
+
+VS Code är ett stort program som det dessutom finns massor av tillägg till. Vi fokuserar här på hur det går till att ladda ned ett projekt från GitHub, editera en fil i projektet lokalt på datorn, för att slutligen synkronisera filen med GitHub igen. **Men**: först måste du skapa ett projekt på ditt GitHub-konto. Det vi mest kommer att göra i skolan är att **kopiera** projekt (det kommer egentligen enbart att vara s.k kodskelett och beskrivning av uppgifter), som du sedan ska göra något med. [Jag har skapat projektet CopyMe](https://github.com/nika-edu/CopyMe) som enbart består av en fil.
+
+Efter att du gått till länken till projektet CopyMe så finns det en grön knapp upp till höger som det står `Fork` på. Tryck på den. Det som händer är att en kopia av projektet skapas på ditt GitHub-konto. Går du dit så bör det se ut något i stil med nedanstående bild:
+
+![](./images/forked_repo_01.png)
+
+Observera att upptill vänster står det `Forked from nika-edu/CopyMe`, om du ser detta i ditt webbläsarfönster så vet du att du är på rätt plats.
+
+Nu ska projektet klonas till din dator, det görs genom att du trycker på den gröna knappen som det står `Code` på.
+
+![](./images/forked_repo_02.png)
+
+I bilden ovan har jag ringat in att du ska trycka där det står SSH. Det betyder att länken kommer att anpassas till att använda SSH (som du ju konfigurerat sedan tidigare). När SSH är valt ska länken kopieras.
