@@ -43,7 +43,7 @@ När du nu har ett GitHub-konto ska du ladda ned programmet Git till din dator. 
 
 ### __3. Konfigurera Git på datorn__
 Efter att du installerat Git på datorn behöver flera konfigurationer göras, för dessa behöver du öppna terminalfönstret `Git Bash` (finns på Start-menyn efter att Git installerats). Öppna `Git Bash`
-![](git_start_menu.png)
+![](./images/git_start_menu.png)
 
 
 och skriv:
@@ -51,7 +51,7 @@ och skriv:
 ```
 git config --global user.email "email@example.com"
 ```
-![](git_config_mail.png)
+![](./images/git_config_mail.png)
 
 Detta ställer in e-postadressen i Git, och behövs för att kunna synkronisera filer till GitHub. Naturligtvis ska du ange din egen e-postadress.
 
@@ -82,22 +82,22 @@ I terminalfönstret skriver du nu
 ssh-keygen
 ```
 
-![](ssh_step_01.png)
+![](./images/ssh_step_01.png)
 **Tryck \<Enter>**
 
-![](ssh_step_02.png)
+![](./images/ssh_step_02.png)
 
 **Tryck \<Enter>** (Du ska alltså inte sätta ett lösenord; detta för att det blir mer lätthanterligt med VS Code).
 
-![](ssh_step_03.png)
+![](./images/ssh_step_03.png)
 
 Här ska du bara trycka **\<Enter>** igen.
 
-![](ssh_step_04.png)
+![](./images/ssh_step_04.png)
 
 Nu är nyckelparet skapat och terminalen visar lite information om det.
 
-![](ssh_step_05.png)
+![](./images/ssh_step_05.png)
 
 Du kan kontrollera att filerna skapades med kommandot `ls .ssh` i terminalen (observera den inledande punkten).
 
@@ -105,7 +105,7 @@ Filen är nyckelparet; `id_rsa` är den privata delen i paret och ska inte lämn
 
 Du ska titta på den publika delen av nyckelparet:
 
-![](ssh_step_06.png)
+![](./images/ssh_step_06.png)
 
 I och med det är själva skapandet av nyckelparet klart (men vi har en bit kvar att gå, så stäng inte terminalfönstret ännu!).
 
@@ -119,14 +119,14 @@ Vi måste ge ssh tillåtelse att ansluta till GitHub. Det görs med kommandot
 ssh-keyscan.exe -t rsa github.com >> .ssh/known_hosts
 ```
 
-![](ssh_step_07.png)
+![](./images/ssh_step_07.png)
 
 ***
 
 ### __6. Kopiera den publika delen av nyckelparet__
 Nu ska den publika delen av nyckeln kopieras till GitHub. Du har tidigare tittat på innehållet i nyckelparets publika del (om du inte har det kvar i terminalfönstret skriver du `cat .ssh/id_rsa.pub`). Markera det innehållet och kopiera (högerklicka efter du markerat för att få upp menyn med möjlighet att kopiera):
 
-![](ssh_step_09.png)
+![](./images/ssh_step_09.png)
 
 **Tillägg**: Exponera inte din publika nyckel i onödan (och aldrig någonsin din privata nyckel). Själv skapade jag ett nytt nyckelpar efter att jag tagit alla skärmbilder som behövdes.
 
@@ -135,19 +135,19 @@ Nu ska den publika delen av nyckeln kopieras till GitHub. Du har tidigare tittat
 ### __7. Installera den publika delen av nyckelparet på GitHub__
 Öppna inställningssidan på ditt konto i GitHub:
 
-![](github_add_key_01.png)
+![](./images/github_add_key_01.png)
 
 Därefter väljs avdelningen `SSH and GPG keys`, varpå man trycker på knappen `New SSH key`:
 
-![](github_add_key_02.png)
+![](./images/github_add_key_02.png)
 
 Den publika nyckeln har du kopierat sedan tidigare (punkt 6 ovan), så det bör bara vara att klistra in den. Ge också nyckeln ett namn; själv valde jag det fantasifulla namnet `Default` för min nyckel som jag klistrade in i GitHub.
 
-![](github_add_key_03.png)
+![](./images/github_add_key_03.png)
 
 Efter att detta är gjort, och du tryckt på `Add SSH key` under fältet så bör det se ut något liknande som nedan:
 
-![](github_add_key_04.png)
+![](./images/github_add_key_04.png)
 
 I och med det så är också SSH-konfigurationen av ditt GitHub-konto klar.
 
