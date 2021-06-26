@@ -172,3 +172,49 @@ I bilden ovan har jag ringat in att du ska trycka där det står SSH. Det betyde
 
 Nu över till VS Code!
 
+När VS Code öppnas i Windows ser det ut något liknande som nedan.
+
+![](./images/VSCode_01.png)
+
+Där ska du trycka på `Clone Git Repository`. I och med att du gör detta så visar sig ett fält i toppen av VS Code:
+
+![](./images/VSCode_02.png)
+
+I detta fält klistrar du in länken som du nyss kopierat från GitHGub.
+
+Efter att du klistrat in länken och tryckt på \<Enter> så ska du välja en plats för projektet på din dator. Skapa gärna en katalog / mapp där du samlar de projekt som du arbetar med. Projekten kommer att lägga sig i en undermapp, så du behöver inte själv skapa en egen mapp för respektive projekt. För att snabbt komma åt mappen så kan det vara bra att dra den till fältet för snabbåtkomst.
+
+![](./images/VSCode_03.png)
+
+Efter att en plats är bestämd för projektet så kommer det upp en fråga, längst ned till höger, om du vill öppna det i VS Code. Det blir minst stökigt på skrivbordet om det **inte** öppnas i ett nytt fönster.
+
+![](./images/VSCode_04.png)
+
+När projektet är öppnat kommer filerna att synas i vänsterkanten. Tryck på `README.md`.
+
+![](./images/VSCode_05.png)
+
+Då kommer filen att visa sig:
+
+![](./images/VSCode_06.png)
+
+Nu kan du rätta stavfelen i texten:
+
+![](./images/VSCode_07.png)
+
+Observera vid pilen att det står en etta. Det betyder att det finns en fil med osparade ändringar. Spara filen, antingen med genom menyalternativet `File -> Save` eller med tangentkombinationen `CTRL+S`. Då försvinner ettan från den platsen.
+
+Gå nu till `Source Control` (pil till vänster nedan):
+![](./images/VSCode_08.png)
+
+För att uppdatera listan kan VS Code behöva läsa in den på nytt. Det sker genom att trycka på den symbol som pil 2 pekar på i skärmklippet ovan.
+
+I och med att listan uppdaterats så dyker filen upp enligt nedan:
+
+![](./images/VSCode_09.png)
+
+Om du ställer muspekaren på raden i listan så dyker det upp några symboler. Där ska du trycka på plus-tecknet.
+
+![](./images/VSCode_10.png)
+
+Det som händer nu är att git-systemet förbereder en synkronisering av filen. På engelska heter detta steg **stage** (ungefär etapp på svenska). När filen är "stage:ad" ("iscensatt" på svenska kanske) så ska 
