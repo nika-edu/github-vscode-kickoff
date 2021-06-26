@@ -1,7 +1,7 @@
 # Kom igång med i GitHub i VS Code
 Huvudavsnitt nedan:
 * [Skapa ett GitHub-konto med SSH-autensiering](#skapa-ett-github-konto-med-ssh-autensiering)
-* [Använda VS Code med GitHub](#använda-vs-code-med-github) (Ännu ej klart)
+* [Använda VS Code med GitHub](#använda-vs-code-med-github)
 ### Vad är GitHub?
 GitHub är en s.k versionshanteringstjänst som många programmerare använder. Versionshantering innebär att tidigare versioner av källkod (eller andra dokument) sparas. All programutveckling sker stegvis; du kanske börjar med att skapa grundfunktionaliteten i programmet för att sedan bygga på med andra saker. I Github kan hela den processen sparas. Det gör att det går att gå tillbaka till en tidigare version om det skulle behövas. Du har dessutom alltid en backup på koden om din dator skulle gå sönder. Det är enkelt att dela kod med andra, och det går att samarbeta flera programmerare i ett och samma projekt (fast från olika datorer). Många projekt i GitHub är öppen källkod (Open Source), vars syfte är att skapa program som det är tillåtet för vem som helst att bygga vidare på. 
 
