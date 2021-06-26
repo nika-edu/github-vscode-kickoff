@@ -169,3 +169,6 @@ Nu ska projektet klonas till din dator, det görs genom att du trycker på den g
 ![](./images/forked_repo_02.png)
 
 I bilden ovan har jag ringat in att du ska trycka där det står SSH. Det betyder att länken kommer att anpassas till att använda SSH (som du ju konfigurerat sedan tidigare). När SSH är valt ska länken kopieras.
+
+Nu över till VS Code!
+
