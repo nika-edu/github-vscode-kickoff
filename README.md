@@ -84,6 +84,7 @@ ssh-keygen
 ```
 
 ![](./images/ssh_step_01.png)
+
 **Tryck \<Enter>**
 
 ![](./images/ssh_step_02.png)
