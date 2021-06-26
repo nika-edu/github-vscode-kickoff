@@ -43,6 +43,7 @@ När du nu har ett GitHub-konto ska du ladda ned programmet Git till din dator. 
 
 ### __3. Konfigurera Git på datorn__
 Efter att du installerat Git på datorn behöver flera konfigurationer göras, för dessa behöver du öppna terminalfönstret `Git Bash` (finns på Start-menyn efter att Git installerats). Öppna `Git Bash`
+
 ![](./images/git_start_menu.png)
 
 
