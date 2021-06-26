@@ -217,4 +217,14 @@ Om du ställer muspekaren på raden i listan så dyker det upp några symboler. 
 
 ![](./images/VSCode_10.png)
 
-Det som händer nu är att git-systemet förbereder en synkronisering av filen. På engelska heter detta steg **stage** (ungefär etapp på svenska). När filen är "stage:ad" ("iscensatt" på svenska kanske) så ska 
+Det som händer nu är att git-systemet förbereder en synkronisering av filen. På engelska heter detta steg **stage** (ungefär etapp på svenska). När filen är "stage:ad" ("iscensatt" på svenska kanske) så ska den "förbindas" med tidigare versioner av filen; detta kallas **commit** på engelska. I samband med att man gör en **commit** så bör en kort text (*commit message*)av vad som gjordes bifogas också (den kommer att synas i GitHub). Se nedanstående bild:
+
+![](./images/VSCode_11.png)
+
+Pilen till vänster visar exempel på text (*commit message*). För att verkställa förbindelsen (*commitment*) så trycker man antingen på den markerade bocken (pil 2) eller så trycker man på CTRL + \<Enter>. Därefter är det enbart ett steg kvar.
+
+I det sista steget ska ändringarna synkroniseras med ditt kopierade projekt på GitHub. Nedanstående markering på skärmklippet visar var du ska trycka:
+
+![](./images/VSCode_12.png)
+
+Längst ned till vänster i VS Code ser du pilar som är formade som ett hjul. Det är denna symbol som du ska trycka på för att verkställa synkroniseringen. När "hjulet" har snurrat färdigt är det klart; du har nu en och samma version av projektet på GitHub som på din dator.
