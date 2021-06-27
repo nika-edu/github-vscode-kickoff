@@ -114,7 +114,7 @@ Filen är nyckelparet; `id_rsa` är den privata delen i paret och ska inte lämn
 
 Nu är själva skapandet av nyckelparet klart (men vi har en bit kvar att gå, så stäng inte terminalfönstret ännu!).
 
-(Om du vill pröva att sätta ett lösenord till din nyckel kan du [följa denna guide](https://github.com/Microsoft/vscode/issues/13680)).
+(Om du vill pröva att sätta ett lösenord till din nyckel kan du [följa denna guide](https://github.com/Microsoft/vscode/issues/13680)). Dock är det lite bökigt då Git använder ett `ssh`-program, och Windows ett annat. För att läsa in lösenordet till *agenten* (som det står om i länken ovan) måste man öppna ett annat terminalfönster; sök rätt på `PowerShell` på Start-menyn. Jag rekommenderar å det starkaste att inte rådda med detta innan du är bekväm med  hur `ssh` används.
 
 ***
 
