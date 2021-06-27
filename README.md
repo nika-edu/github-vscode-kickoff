@@ -121,12 +121,12 @@ Vi måste ge ssh tillåtelse att ansluta till GitHub. Det görs med kommandot
 ssh-keyscan.exe -t rsa github.com >> .ssh/known_hosts
 ```
 
-![](./images/ssh_step_07a.png)
+![](./images/ssh_step_08a.png)
 
 ***
 
 ### __6. Kopiera den publika delen av nyckelparet__
-Nu ska den publika delen av nyckeln kopieras till GitHub. Du har tidigare tittat på innehållet i nyckelparets publika del (om du inte har det kvar i terminalfönstret skriver du `cat .ssh/id_rsa.pub`). Markera det innehållet och kopiera (högerklicka efter du markerat för att få upp menyn med möjlighet att kopiera):
+Nu ska den publika delen av nyckeln kopieras till GitHub. Visa nyckeln i terminalfönstret genom att skriva in kommandot `cat .ssh/id_rsa.pub`. Markera det innehållet och kopiera (högerklicka efter du markerat för att få upp menyn med möjlighet att kopiera):
 
 ![](./images/ssh_step_09a.png)
 
