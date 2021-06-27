@@ -101,15 +101,18 @@ Nu är nyckelparet skapat och terminalen visar lite information om det.
 
 ![](./images/ssh_step_05a.png)
 
-Du kan kontrollera att filerna skapades med kommandot `ls .ssh` i terminalen (observera den inledande punkten).
+Du kan kontrollera att filerna skapades med kommandot `ls .ssh` i terminalen (observera den inledande punkten). Du kan också titta på den publika nyckeln genom att skriva kommandot
+
+``
+cat .ssh/id_rsa.pub
+``
+
+![](./images/ssh_step_07a.png)
 
 Filen är nyckelparet; `id_rsa` är den privata delen i paret och ska inte lämna din dator. `id_rsa.pub` är den publika delen och dess innehåll ska kopieras till GitHub (beskrivs i punkt 6 nedan).
 
-Du ska titta på den publika delen av nyckelparet:
 
-![](./images/ssh_step_06a.png)
-
-I och med det är själva skapandet av nyckelparet klart (men vi har en bit kvar att gå, så stäng inte terminalfönstret ännu!).
+Nu är själva skapandet av nyckelparet klart (men vi har en bit kvar att gå, så stäng inte terminalfönstret ännu!).
 
 ***
 
@@ -126,7 +129,7 @@ ssh-keyscan.exe -t rsa github.com >> .ssh/known_hosts
 ***
 
 ### __6. Kopiera den publika delen av nyckelparet__
-Nu ska den publika delen av nyckeln kopieras till GitHub. Visa nyckeln i terminalfönstret genom att skriva in kommandot `cat .ssh/id_rsa.pub`. Markera det innehållet och kopiera (högerklicka efter du markerat för att få upp menyn med möjlighet att kopiera):
+Nu ska den publika delen av nyckeln kopieras till GitHub. Tidigare visdade du nyckeln i terminalfönstret (har du inte det kvar i fönstret kan du kriva in kommandot `cat .ssh/id_rsa.pub` igen). Markera det innehållet och kopiera (högerklicka efter du markerat för att få upp menyn med möjlighet att kopiera):
 
 ![](./images/ssh_step_09a.png)
 
