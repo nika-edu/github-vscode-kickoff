@@ -114,6 +114,8 @@ Filen är nyckelparet; `id_rsa` är den privata delen i paret och ska inte lämn
 
 Nu är själva skapandet av nyckelparet klart (men vi har en bit kvar att gå, så stäng inte terminalfönstret ännu!).
 
+(Om du vill pröva att sätta ett lösenord till din nyckel kan du [följa denna guide](https://github.com/Microsoft/vscode/issues/13680)).
+
 ***
 
 
