@@ -2,6 +2,7 @@
 Huvudavsnitt nedan:
 * [Skapa ett GitHub-konto med SSH-autensiering](#skapa-ett-github-konto-med-ssh-autensiering)
 * [Använda VS Code med GitHub](#använda-vs-code-med-github)
+* [Extra - Sätt ett lösenord på din privata nyckel](#extra---sätt-ett-lösenord-på-din-privata-nyckel)
 ### Vad är GitHub?
 GitHub är en s.k versionshanteringstjänst som många programmerare använder. Versionshantering innebär att tidigare versioner av källkod (eller andra dokument) sparas. All programutveckling sker stegvis; du kanske börjar med att skapa grundfunktionaliteten i programmet för att sedan bygga på med andra saker. I Github kan hela den processen sparas. Det gör att det går att gå tillbaka till en tidigare version om det skulle behövas. Du har dessutom alltid en backup på koden om din dator skulle gå sönder. Det är enkelt att dela kod med andra, och det går att samarbeta flera programmerare i ett och samma projekt (fast från olika datorer). Många projekt i GitHub är öppen källkod (Open Source), vars syfte är att skapa program som det är tillåtet för vem som helst att bygga vidare på. 
 
@@ -114,8 +115,6 @@ Filen är nyckelparet; `id_rsa` är den privata delen i paret och ska inte lämn
 
 Nu är själva skapandet av nyckelparet klart (men vi har en bit kvar att gå, så stäng inte terminalfönstret ännu!).
 
-(Om du vill pröva att sätta ett lösenord till din nyckel kan du [följa denna guide](https://github.com/Microsoft/vscode/issues/13680)). Dock är det lite bökigt då Git använder ett `ssh`-program, och Windows ett annat. För att läsa in lösenordet till *agenten* (som det står om i länken ovan) måste man öppna ett annat terminalfönster; sök rätt på `PowerShell` på Start-menyn. Jag rekommenderar å det starkaste att inte rådda med detta innan du är bekväm med  hur `ssh` används.
-
 ***
 
 
@@ -163,13 +162,23 @@ I och med det så är också SSH-konfigurationen av ditt GitHub-konto klar.
 ## Använda VS Code med GitHub
 Börja med att [ladda ned](https://code.visualstudio.com/download) och installera VS Code.
 
-VS Code är ett stort program som det dessutom finns massor av tillägg till. Vi fokuserar här på hur det går till att ladda ned ett projekt från GitHub, editera en fil i projektet lokalt på datorn, för att slutligen synkronisera filen med GitHub igen. **Men**: först måste du skapa ett projekt på ditt GitHub-konto. Det vi mest kommer att göra i skolan är att **kopiera** projekt (det kommer egentligen enbart att vara s.k kodskelett och beskrivning av uppgifter), som du sedan ska göra något med. [Jag har skapat projektet CopyMe](https://github.com/nika-edu/CopyMe) som enbart består av en fil.
+VS Code är ett stort program som det dessutom finns massor av tillägg till. Vi fokuserar här på hur det går till att ladda ned ett projekt från GitHub, editera en fil i projektet lokalt på datorn, för att slutligen synkronisera filen med GitHub igen. **Men**: först måste du skapa ett projekt (eller egentligen en *repository*, populärt kallat *repo*, vilket kan översättas med "behållare") på ditt GitHub-konto. Det vi mest kommer att göra i skolan är att kopiera (på GitHub-språk heter detta **Fork**) sådana *repos* (det kommer egentligen enbart att vara s.k kodskelett och beskrivning av uppgifter) som du sedan ska göra något med. [Jag har skapat repon ForkMe](https://github.com/nika-edu/CopyMe) som enbart består av en fil.
 
-Efter att du gått till länken till projektet CopyMe så finns det en grön knapp upp till höger som det står `Fork` på. Tryck på den. Det som händer är att en kopia av projektet skapas på ditt GitHub-konto. Går du dit så bör det se ut något i stil med nedanstående bild:
+ForkMe är ett övningsprojekt som går ut på att du ska kopiera projektet till ditt GitHub-konto ("*Fork:a*" det), därefter *klona* det till din dator, göra några förändringar i en textfil för att slutligen ladda upp det till ditt konto på GitHub igen. Det låter kanske mycket, men när du börjar vänja dig vid proceduren så kommer det att gå allt lättare.
+
+***
+
+### 1: __Kopiera projektet till ditt konto__
+
+Efter att du gått till länken till *repon* ForkMe så finns det en grön knapp upp till höger som det står `Fork` på. Tryck på den. Det som händer är att en kopia av projektet skapas på ditt GitHub-konto. Går du dit så bör det se ut något i stil med nedanstående bild:
 
 ![](./images/forked_repo_01.png)
 
 Observera att upptill vänster står det `Forked from nika-edu/CopyMe`, om du ser detta i ditt webbläsarfönster så vet du att du är på rätt plats.
+
+***
+
+### 2. __Klona projektet till din dator__
 
 Nu ska projektet klonas till din dator, det görs genom att du trycker på den gröna knappen som det står `Code` på.
 
@@ -189,7 +198,7 @@ Där ska du trycka på `Clone Git Repository`. I och med att du gör detta så v
 
 I detta fält klistrar du in länken som du nyss kopierat från GitHGub.
 
-Efter att du klistrat in länken och tryckt på \<Enter> så ska du välja en plats för projektet på din dator. Skapa gärna en katalog / mapp där du samlar de projekt som du arbetar med. Projekten kommer att lägga sig i en undermapp, så du behöver inte själv skapa en egen mapp för respektive projekt. För att snabbt komma åt mappen så kan det vara bra att dra den till fältet för snabbåtkomst.
+Efter att du klistrat in länken och tryckt på \<Enter> så ska du välja en plats för projektet på din dator. Skapa gärna en katalog / mapp där du samlar de projekt som du arbetar med. Projekten kommer att lägga sig i en undermapp, så du behöver inte själv skapa en egen mapp för respektive projekt. För att snabbt komma åt mappen så kan det vara bra att dra den till fältet för snabbåtkomst i Windows Utforskaren (File Explorer).
 
 ![](./images/VSCode_03.png)
 
@@ -197,7 +206,13 @@ Efter att en plats är bestämd för projektet så kommer det upp en fråga, lä
 
 ![](./images/VSCode_04.png)
 
-När projektet är öppnat kommer filerna att synas i vänsterkanten. Tryck på `README.md`.
+När projektet är öppnat kommer filerna att synas i vänsterkanten. Nu finns filerna (i det här fallet enbart en fil) på din dator, och det är bara att göra vad som ska göras med dem!
+
+***
+
+### 3. __Editera och spara__
+
+Tryck på `README.md`.
 
 ![](./images/VSCode_05.png)
 
@@ -211,6 +226,13 @@ Nu kan du rätta stavfelen i texten:
 
 Observera vid pilen att det står en etta. Det betyder att det finns en fil med osparade ändringar. Spara filen, antingen med genom menyalternativet `File -> Save` eller med tangentkombinationen `CTRL+S`. Då försvinner ettan från den platsen.
 
+***
+
+### 4. __Versionshantering och uppladdning__
+
+Versionshantering och uppladdning är en trestegsprocess, vi tar ett steg i taget.
+
+#### <ins>4.1. Göra filen klar för versionshantering (__stage__)</ins>
 Gå nu till `Source Control` (pil till vänster nedan):
 ![](./images/VSCode_08.png)
 
@@ -224,14 +246,41 @@ Om du ställer muspekaren på raden i listan så dyker det upp några symboler. 
 
 ![](./images/VSCode_10.png)
 
-Det som händer nu är att git-systemet förbereder en synkronisering av filen. På engelska heter detta steg **stage** (ungefär etapp på svenska). När filen är "stage:ad" ("iscensatt" på svenska kanske) så ska den "förbindas" med tidigare versioner av filen; detta kallas **commit** på engelska. I samband med att man gör en **commit** så bör en kort text (*commit message*)av vad som gjordes bifogas också (den kommer att synas i GitHub). Se nedanstående bild:
+Det som händer nu är att git-systemet förbereder en synkronisering av filen. På engelska heter detta steg **stage** (ungefär etapp på svenska).
+
+#### <ins>4.2. Förbind filen med tidigare versioner (__commit__)</ins>
+
+När filen är "stage:ad" ("iscensatt" på svenska kanske) så ska den "förbindas" med tidigare versioner av filen; detta kallas **commit** på GitHub-språk. I samband med att man gör en **commit** så bör en kort text (*commit message*) av vad som gjordes bifogas också (den kommer att synas i GitHub). Se nedanstående bild:
 
 ![](./images/VSCode_11.png)
 
 Pilen till vänster visar exempel på text (*commit message*). För att verkställa förbindelsen (*commitment*) så trycker man antingen på den markerade bocken (pil 2) eller så trycker man på CTRL + \<Enter>. Därefter är det enbart ett steg kvar.
 
+#### <ins>4.3. Synkronisering med GitHub (__sync__)</ins>
 I det sista steget ska ändringarna synkroniseras med ditt kopierade projekt på GitHub. Nedanstående markering på skärmklippet visar var du ska trycka:
 
 ![](./images/VSCode_12.png)
 
 Längst ned till vänster i VS Code ser du pilar som är formade som ett hjul. Det är denna symbol som du ska trycka på för att verkställa synkroniseringen. När "hjulet" har snurrat färdigt är det klart; du har nu en och samma version av projektet på GitHub som på din dator.
+
+***
+## __Extra__ - Sätt ett lösenord på din privata nyckel
+För att sätta ett lösenord till din privata nyckel ska kommandot 
+
+`ssh-keygen -p`
+
+exekveras i `Git Bash`-terminalen. 
+
+Det som tyvärr är lite bökigt är att VS Code inte verkar ge möjlighet att ange detta lösenord när det behövs. Då får man ta till ett verktyg som heter `ssh-agent`; denna läser in lösenordet till nyckeln och sparar detta i Windows-systemet så länge som datorn är igång. [Följ denna guide](https://github.com/Microsoft/vscode/issues/13680#issuecomment-414841885) för att starta `ssh-agent`. 
+
+När denna är startad kan lösenordet läsas in i agenten. Sök rätt på `PowerShell` på Start-menyn. I `PowerShell` ska sedan kommandot
+
+```
+ssh-add
+```
+
+exekveras. Nu får du ange lösenordet, och det kommer därefter att sparas i datorns minne. När det är gjort kan du stänga `PowerShell`.
+
+Efter varje omstart av datorn måste du köra `ssh-add`, själva poängen är att lösenordet inte sparas på lagringsmediet. Däremot kommer `ssh-agent` att startas automatiskt om du följde instruktionerna i länken ovan.
+
+**Pro-tips**: Istället för att starta ett separat fönster med `PowerShell` kan det öppnas inuti VS Code. Det kan göras med tangentkombnationen `Ctrl+Shift+Ö`. Väl där inne kan du exekvera kommandot `ssh-add`. 
