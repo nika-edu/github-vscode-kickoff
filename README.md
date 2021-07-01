@@ -4,7 +4,7 @@ Huvudavsnitt nedan:
 * [Använda VS Code med GitHub](#använda-vs-code-med-github)
 * [Extra - Sätt ett lösenord på din privata nyckel](#extra---sätt-ett-lösenord-på-din-privata-nyckel)
 ### Vad är GitHub?
-GitHub är en s.k versionshanteringstjänst som många programmerare använder. Versionshantering innebär att tidigare versioner av källkod (eller andra dokument) sparas. All programutveckling sker stegvis; du kanske börjar med att skapa grundfunktionaliteten i programmet för att sedan bygga på med andra saker. I Github kan hela den processen sparas. Det gör att det går att gå tillbaka till en tidigare version om det skulle behövas. Du har dessutom alltid en backup på koden om din dator skulle gå sönder. Det är enkelt att dela kod med andra, och det går att samarbeta flera programmerare i ett och samma projekt (fast från olika datorer). Många projekt i GitHub är öppen källkod (Open Source), vars syfte är att skapa program som det är tillåtet för vem som helst att bygga vidare på. 
+GitHub är en s.k versionshanteringstjänst som många programmerare använder. Versionshantering innebär att tidigare versioner av källkod (eller andra dokument) sparas. All programutveckling sker stegvis; du kanske börjar med att skapa grundfunktionaliteten i programmet för att sedan bygga på med andra saker. I GitHub kan hela den processen sparas. Det gör att det går att gå tillbaka till en tidigare version om det skulle behövas. Du har dessutom alltid en backup på koden om din dator skulle gå sönder. Det är enkelt att dela kod med andra, och det går att samarbeta flera programmerare i ett och samma projekt (fast från olika datorer). Många projekt i GitHub är öppen källkod (Open Source), vars syfte är att skapa program som det är tillåtet för vem som helst att bygga vidare på. 
 
 Syftet med den här guiden är att du ska skapa en miljö där du enkelt kan ladda upp och ladda ned kod till och från GitHub.
 
@@ -110,7 +110,7 @@ cat .ssh/id_rsa.pub
 
 ![](./images/ssh_step_07a.png)
 
-Filen är nyckelparet; `id_rsa` är den privata delen i paret och ska inte lämna din dator. `id_rsa.pub` är den publika delen och dess innehåll ska kopieras till GitHub (beskrivs i punkt 6 nedan).
+Filerna är nyckelparet; `id_rsa` är den privata delen i paret och ska inte lämna din dator. `id_rsa.pub` är den publika delen och dess innehåll ska kopieras till GitHub (beskrivs i punkt 6 nedan).
 
 
 Nu är själva skapandet av nyckelparet klart (men vi har en bit kvar att gå, så stäng inte terminalfönstret ännu!).
@@ -162,21 +162,28 @@ I och med det så är också SSH-konfigurationen av ditt GitHub-konto klar.
 ## Använda VS Code med GitHub
 Börja med att [ladda ned](https://code.visualstudio.com/download) och installera VS Code.
 
-VS Code är ett stort program som det dessutom finns massor av tillägg till. Vi fokuserar här på hur det går till att kopiera ett projekt från GitHub till ditt konto, klona detta kopierade projekt till din dator, editera en fil i projektet lokalt på datorn, för att slutligen synkronisera filen med GitHub igen. Det är alltså lite att göra innan du kommer till att kunna editera filer, men vi tar det steg för steg.
+VS Code är ett stort program som det dessutom finns massor av tillägg till. Vi fokuserar här på hur det går till att kopiera ett projekt från GitHub till ditt konto, klona detta kopierade projekt till din dator, editera en fil i projektet lokalt på datorn med VS Code, för att slutligen synkronisera filen med GitHub igen. Vi tar dessa saker steg för steg.
 
-Först måste du skapa ett projekt (eller egentligen en *repository*, populärt kallat *repo*, vilket kan översättas med "behållare") på ditt GitHub-konto. Det vi mest kommer att göra i skolan är att kopiera (på GitHub-språk heter detta **Fork**) sådana *repos* (det kommer egentligen enbart att vara s.k kodskelett och beskrivning av uppgifter) som du sedan ska göra något med. [Jag har skapat repon ForkMe](https://github.com/nika-edu/CopyMe) som enbart består av en fil.
+1. [Kopiera ett projekt (med `Fork`) till ditt konto](#1-kopiera-ett-projekt-med-fork-till-ditt-konto)
+2. [Klona projektet till din dator](#2-klona-projektet-till-din-dator)
+3. [Editera och spara](#3-editera-och-spara)
+4. [Versionshantering och synkronisering](#4-versionshantering-och-synkronisering)
 
-ForkMe är ett övningsprojekt som går ut på att du ska kopiera projektet till ditt GitHub-konto ("*Fork:a*" det), därefter *klona* det till din dator, göra några förändringar i en textfil för att slutligen ladda upp det till ditt konto på GitHub igen. Det låter kanske mycket, men när du börjar vänja dig vid proceduren så kommer det att gå allt lättare.
+
 
 ***
 
-### 1. __Kopiera projektet till ditt konto__
+### 1. __Kopiera ett projekt (med Fork) till ditt konto__
 
-Efter att du gått till länken till *repon* ForkMe så finns det en grön knapp upp till höger som det står `Fork` på. Tryck på den. Det som händer är att en kopia av projektet skapas på ditt GitHub-konto. Går du dit så bör det se ut något i stil med nedanstående bild:
+Först måste du skapa ett projekt (eller egentligen en *repository*, populärt kallat *repo*, vilket kan översättas med "behållare") på ditt GitHub-konto. Det vi mest kommer att göra i skolan är att kopiera (på GitHub-språk heter detta **Fork**) sådana *repos* (det kommer egentligen enbart att vara s.k kodskelett och beskrivning av uppgifter) som du sedan ska göra något med. [Jag har skapat repon ForkMe](https://github.com/nika-edu/ForkMe) som enbart består av en fil.
+
+ForkMe är ett övningsprojekt som går ut på att du ska kopiera projektet till ditt GitHub-konto ("*Fork:a*" det), därefter *klona* det till din dator, göra några förändringar i en textfil för att slutligen ladda upp det till ditt konto på GitHub igen. Det låter kanske mycket, men när du börjar vänja dig vid proceduren så kommer det att gå allt lättare.
+
+Efter att du gått till länken till *repon* [ForkMe](https://github.com/nika-edu/ForkMe) så finns det en grön knapp upp till höger som det står `Fork` på. Tryck på den. Det som händer är att en kopia av projektet skapas på ditt GitHub-konto (du måste förstås vara inloggad på GitHub). Går du dit så bör det se ut något i stil med nedanstående bild:
 
 ![](./images/forked_repo_01a.png)
 
-Observera att upptill vänster står det `Forked from nika-edu/CopyMe`, om du ser detta i ditt webbläsarfönster så vet du att du är på rätt plats.
+Observera att upptill vänster står det `Forked from nika-edu/ForkMe`, om du ser detta i ditt webbläsarfönster så vet du att du är på rätt plats.
 
 ***
 
@@ -184,9 +191,9 @@ Observera att upptill vänster står det `Forked from nika-edu/CopyMe`, om du se
 
 Nu ska projektet klonas till din dator, det görs genom att du trycker på den gröna knappen som det står `Code` på.
 
-![](./images/forked_repo_02a.png)
+![](./images/forked_repo_02b.png)
 
-I bilden ovan har jag ringat in att du ska trycka där det står SSH. Det betyder att länken kommer att anpassas till att använda SSH (som du ju konfigurerat sedan tidigare). När SSH är valt ska länken kopieras.
+I bilden ovan har jag markerat att du ska trycka där det står SSH. Det betyder att länken kommer att anpassas till att använda SSH (som du ju konfigurerat sedan tidigare). När SSH är valt ska länken i fältet kopieras.
 
 Nu över till VS Code!
 
@@ -207,6 +214,10 @@ Efter att du klistrat in länken och tryckt på \<Enter> så ska du välja en pl
 Efter att en plats är bestämd för projektet så kommer det upp en fråga, längst ned till höger, om du vill öppna det i VS Code. Det blir minst stökigt på skrivbordet om det **inte** öppnas i ett nytt fönster.
 
 ![](./images/VSCode_04.png)
+
+I samband med att projektet öppnas kan det komma upp en fråga om du litar på koden i denna mapp (det bör du göra på din egen dator); det betyder att VS Code i så fall får tillåtelse att köra kod i denna mapp.
+
+![](./images/VSCode_04a.png)
 
 När projektet är öppnat kommer filerna att synas i vänsterkanten. Nu finns filerna (i det här fallet enbart en fil) på din dator, och det är bara att göra vad som ska göras med dem!
 
@@ -230,9 +241,9 @@ Observera vid pilen att det står en etta. Det betyder att det finns en fil med 
 
 ***
 
-### 4. __Versionshantering och uppladdning__
+### 4. __Versionshantering och synkronisering__
 
-Versionshantering och uppladdning är en trestegsprocess, vi tar ett steg i taget.
+Versionshantering och synkronisering är en trestegsprocess, vi tar ett steg i taget.
 
 #### <ins>4.1. Göra filen klar för versionshantering (__stage__)</ins>
 Gå nu till `Source Control` (pil till vänster nedan):
@@ -285,4 +296,4 @@ exekveras. Nu får du ange lösenordet, och det kommer därefter att sparas i da
 
 Efter varje omstart av datorn måste du köra `ssh-add`, själva poängen är att lösenordet inte sparas på lagringsmediet. Däremot kommer `ssh-agent` att startas automatiskt om du följde instruktionerna i länken ovan.
 
-**Pro-tips**: Istället för att starta ett separat fönster med `PowerShell` kan det öppnas inuti VS Code. Det kan göras med tangentkombinationen `Ctrl+Shift+Ö`. Väl där inne kan du exekvera kommandot `ssh-add`. 
+**Pro-tips**: Istället för att starta ett separat fönster med `PowerShell` kan det öppnas inuti VS Code. Det kan göras med tangentkombinationen `Ctrl+Shift+Ö`. Väl där inne kan du exekvera kommandot `ssh-add`.
