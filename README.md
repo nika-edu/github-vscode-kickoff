@@ -130,7 +130,7 @@ ssh-keyscan.exe -t rsa github.com >> .ssh/known_hosts
 ***
 
 ### __6. Kopiera den publika delen av nyckelparet__
-Nu ska den publika delen av nyckeln kopieras till GitHub. Tidigare visdade du nyckeln i terminalfönstret (har du inte det kvar i fönstret kan du kriva in kommandot `cat .ssh/id_rsa.pub` igen). Markera det innehållet och kopiera (högerklicka efter du markerat för att få upp menyn med möjlighet att kopiera):
+Nu ska den publika delen av nyckeln kopieras till GitHub. Tidigare visdade du nyckeln i terminalfönstret (har du inte det kvar i fönstret kan du skriva in kommandot `cat .ssh/id_rsa.pub` igen). Markera det innehållet och kopiera (högerklicka efter du markerat för att få upp menyn med möjlighet att kopiera):
 
 ![](./images/ssh_step_09a.png)
 
@@ -162,17 +162,19 @@ I och med det så är också SSH-konfigurationen av ditt GitHub-konto klar.
 ## Använda VS Code med GitHub
 Börja med att [ladda ned](https://code.visualstudio.com/download) och installera VS Code.
 
-VS Code är ett stort program som det dessutom finns massor av tillägg till. Vi fokuserar här på hur det går till att ladda ned ett projekt från GitHub, editera en fil i projektet lokalt på datorn, för att slutligen synkronisera filen med GitHub igen. **Men**: först måste du skapa ett projekt (eller egentligen en *repository*, populärt kallat *repo*, vilket kan översättas med "behållare") på ditt GitHub-konto. Det vi mest kommer att göra i skolan är att kopiera (på GitHub-språk heter detta **Fork**) sådana *repos* (det kommer egentligen enbart att vara s.k kodskelett och beskrivning av uppgifter) som du sedan ska göra något med. [Jag har skapat repon ForkMe](https://github.com/nika-edu/CopyMe) som enbart består av en fil.
+VS Code är ett stort program som det dessutom finns massor av tillägg till. Vi fokuserar här på hur det går till att kopiera ett projekt från GitHub till ditt konto, klona detta kopierade projekt till din dator, editera en fil i projektet lokalt på datorn, för att slutligen synkronisera filen med GitHub igen. Det är alltså lite att göra innan du kommer till att kunna editera filer, men vi tar det steg för steg.
+
+Först måste du skapa ett projekt (eller egentligen en *repository*, populärt kallat *repo*, vilket kan översättas med "behållare") på ditt GitHub-konto. Det vi mest kommer att göra i skolan är att kopiera (på GitHub-språk heter detta **Fork**) sådana *repos* (det kommer egentligen enbart att vara s.k kodskelett och beskrivning av uppgifter) som du sedan ska göra något med. [Jag har skapat repon ForkMe](https://github.com/nika-edu/CopyMe) som enbart består av en fil.
 
 ForkMe är ett övningsprojekt som går ut på att du ska kopiera projektet till ditt GitHub-konto ("*Fork:a*" det), därefter *klona* det till din dator, göra några förändringar i en textfil för att slutligen ladda upp det till ditt konto på GitHub igen. Det låter kanske mycket, men när du börjar vänja dig vid proceduren så kommer det att gå allt lättare.
 
 ***
 
-### 1: __Kopiera projektet till ditt konto__
+### 1. __Kopiera projektet till ditt konto__
 
 Efter att du gått till länken till *repon* ForkMe så finns det en grön knapp upp till höger som det står `Fork` på. Tryck på den. Det som händer är att en kopia av projektet skapas på ditt GitHub-konto. Går du dit så bör det se ut något i stil med nedanstående bild:
 
-![](./images/forked_repo_01.png)
+![](./images/forked_repo_01a.png)
 
 Observera att upptill vänster står det `Forked from nika-edu/CopyMe`, om du ser detta i ditt webbläsarfönster så vet du att du är på rätt plats.
 
@@ -182,7 +184,7 @@ Observera att upptill vänster står det `Forked from nika-edu/CopyMe`, om du se
 
 Nu ska projektet klonas till din dator, det görs genom att du trycker på den gröna knappen som det står `Code` på.
 
-![](./images/forked_repo_02.png)
+![](./images/forked_repo_02a.png)
 
 I bilden ovan har jag ringat in att du ska trycka där det står SSH. Det betyder att länken kommer att anpassas till att använda SSH (som du ju konfigurerat sedan tidigare). När SSH är valt ska länken kopieras.
 
@@ -283,4 +285,4 @@ exekveras. Nu får du ange lösenordet, och det kommer därefter att sparas i da
 
 Efter varje omstart av datorn måste du köra `ssh-add`, själva poängen är att lösenordet inte sparas på lagringsmediet. Däremot kommer `ssh-agent` att startas automatiskt om du följde instruktionerna i länken ovan.
 
-**Pro-tips**: Istället för att starta ett separat fönster med `PowerShell` kan det öppnas inuti VS Code. Det kan göras med tangentkombnationen `Ctrl+Shift+Ö`. Väl där inne kan du exekvera kommandot `ssh-add`. 
+**Pro-tips**: Istället för att starta ett separat fönster med `PowerShell` kan det öppnas inuti VS Code. Det kan göras med tangentkombinationen `Ctrl+Shift+Ö`. Väl där inne kan du exekvera kommandot `ssh-add`. 
