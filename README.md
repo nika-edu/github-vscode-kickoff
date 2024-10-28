@@ -38,7 +38,7 @@ Logga in på din mail efter att du skapat kontot, det kan finnas en bekräftelse
 ***
 
 ### __2. Installera programmet Git på din dator__
-När du nu har ett GitHub-konto ska du ladda ned programmet Git till din dator. <a href="https://git-scm.com/download/" target="_blank">Detta program hittar du här</a>. Installera detta på datorn.
+När du nu har ett GitHub-konto ska du ladda ned programmet Git till din dator. <a href="https://git-scm.com/downloads/" target="_blank">Detta program hittar du här</a>. Installera detta på datorn.
 
 ***
 
@@ -81,7 +81,7 @@ Vi går vidare i konfigurationen genom att skapa ett ssh-nyckelpar. `ssh` står 
 I terminalfönstret skriver du nu
 
 ```
-ssh-keygen
+ssh-keygen -t rsa
 ```
 
 ![](./images/ssh_step_01a.png)
